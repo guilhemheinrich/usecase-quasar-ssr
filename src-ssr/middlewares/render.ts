@@ -13,6 +13,7 @@ export default ssrMiddleware(({ app, resolve, render, serve }) => {
 
     render(/* the ssrContext: */ { req, res })
       .then((html) => {
+        console.log(html);
         // now let's send the rendered html to the client
         res.send(html);
       })
