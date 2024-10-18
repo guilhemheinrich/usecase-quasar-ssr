@@ -5,12 +5,8 @@
         <q-form ref="form" @submit="onSubmit">
           <div ref="mkdEditor">
             <q-no-ssr>
-              <VMarkdownEditor
-                v-if="isClient"
-                v-model="content"
-                locale="en"
-                :upload-action="file_upload"
-              ></VMarkdownEditor>
+              <MarkdownEditorComponent :file_upload="file_upload">
+              </MarkdownEditorComponent>
             </q-no-ssr>
           </div>
         </q-form>
@@ -24,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { VMarkdownEditor } from 'vue3-markdown';
+import MarkdownEditorComponent from './MarkdownEditorComponent.vue';
 import { QForm } from 'quasar';
 import { computed, onMounted, ref, type PropType } from 'vue';
 
