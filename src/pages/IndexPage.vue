@@ -11,6 +11,7 @@
       <q-btn to="/normal"> On normal Page </q-btn>
       <q-btn to="/simpleSsr"> On simple Ssr Page </q-btn>
       <q-btn to="/markdown"> On markdown Page </q-btn>
+      <q-btn to="/wysiwyg"> On wysiwyg Page </q-btn>
     </div>
   </q-page>
 </template>

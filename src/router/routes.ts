@@ -17,6 +17,11 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/MarkdownPage.vue') }],
   },
   {
+    path: '/wysiwyg',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/WysiwygPage.vue') }],
+  },
+  {
     path: '/simpleSsr',
     component: () => import('layouts/MainLayout.vue'),
     children: [

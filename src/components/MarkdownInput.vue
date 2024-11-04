@@ -20,10 +20,13 @@
 </template>
 
 <script setup lang="ts">
-import MarkdownEditorComponent from './MarkdownEditorComponent.vue';
+// import MarkdownEditorComponent from './MarkdownEditorComponent.vue';
 import { QForm } from 'quasar';
-import { computed, onMounted, ref, type PropType } from 'vue';
+import { defineAsyncComponent, onMounted, ref, type PropType } from 'vue';
 
+const MarkdownEditorComponent = defineAsyncComponent(
+  () => import('./MarkdownEditorComponent.vue')
+);
 // const isServer = process.env.SERVER;
 // const isClient = process.env.CLIENT;
 
@@ -48,8 +51,6 @@ const content = ref('');
 const mkdEditor = ref<HTMLElement | null>(null);
 
 const outer_div = ref<HTMLElement | null>(null);
-
-const isClient = computed(() => process.env.CLIENT);
 
 onMounted(() => {
   content.value = props.initial_content;

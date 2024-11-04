@@ -1,9 +1,11 @@
 <template>
-  <VMarkdownEditor
-    v-model="content"
-    locale="en"
-    :upload-action="file_upload"
-  ></VMarkdownEditor>
+  <q-no-ssr>
+    <VMarkdownEditor
+      v-model="content"
+      locale="en"
+      :upload-action="file_upload"
+    ></VMarkdownEditor>
+  </q-no-ssr>
 </template>
 
 <script setup lang="ts">
